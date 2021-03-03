@@ -1,4 +1,4 @@
-package com.iup.tp.twitup.ihm.views.main;
+package com.iup.tp.twitup.ihm.views;
 
 import com.iup.tp.twitup.events.file.IMainListener;
 import com.iup.tp.twitup.ihm.views.BaseView;

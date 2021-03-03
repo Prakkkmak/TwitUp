@@ -1,4 +1,4 @@
-package com.iup.tp.twitup.ihm.views.register;
+package com.iup.tp.twitup.ihm.views;
 
 import com.iup.tp.twitup.events.file.IAccountListener;
 import com.iup.tp.twitup.events.file.IRegisterListener;

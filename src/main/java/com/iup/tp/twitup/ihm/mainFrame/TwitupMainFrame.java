@@ -3,7 +3,7 @@ package com.iup.tp.twitup.ihm.mainFrame;
 import com.iup.tp.twitup.events.file.IMainListener;
 import com.iup.tp.twitup.ihm.custom.FileChooser;
 import com.iup.tp.twitup.ihm.custom.MenuBar;
-import com.iup.tp.twitup.ihm.views.main.MainView;
+import com.iup.tp.twitup.ihm.views.MainView;
 
 import javax.swing.*;
 import java.io.File;

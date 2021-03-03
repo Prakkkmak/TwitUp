@@ -28,10 +28,21 @@ public class AccountController extends Listened<IAccountListener> implements IAc
         return null;
     }
 
-    public void doLogin(User user){
+    protected void doLogin(String username, String password){
+        User user = userExists(username, password);
+        if(null == user)  return;
+        doLogin(user);
+    }
+
+    protected void doLogin(User user){
         Twitup.userConnected = user;
     }
 
+    protected void doRegister(String username, String tag, String password){
+        User user = new User(new UUID(0,0), tag, password, username, new HashSet<>(), "");
+        mDatabase.addUser(user);
+        doLogin(user);
+    }
 
     public void doCancel(){
         listeners.forEach(IAccountListener::notifyCancel);
@@ -39,16 +50,13 @@ public class AccountController extends Listened<IAccountListener> implements IAc
 
     @Override
     public void notifyRegister(String username, String tag, String password) {
-        User user = new User(new UUID(0,0), tag, password, username, new HashSet<>(), "");
-        mDatabase.addUser(user);
-        doLogin(user);
+       doRegister(username, tag, password);
     }
 
     @Override
     public void notifyLogin(String username, String password) {
-        System.out.println("Connexion en cours ..");
-        User user = userExists(username, password);
-        if(null != user) doLogin(user);
+        doLogin(username, password);
+        doCancel();
     }
 
     @Override

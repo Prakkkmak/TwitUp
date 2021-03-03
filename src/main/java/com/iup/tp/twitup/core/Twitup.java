@@ -13,10 +13,10 @@ import com.iup.tp.twitup.datamodel.User;
 import com.iup.tp.twitup.events.file.*;
 import com.iup.tp.twitup.ihm.mainFrame.TwitupMainFrame;
 import com.iup.tp.twitup.ihm.TwitupMock;
-import com.iup.tp.twitup.ihm.views.login.LoginView;
-import com.iup.tp.twitup.ihm.views.main.MainView;
-import com.iup.tp.twitup.ihm.views.register.RegisterView;
-import com.iup.tp.twitup.ihm.views.twit.TwitCreationView;
+import com.iup.tp.twitup.ihm.views.LoginView;
+import com.iup.tp.twitup.ihm.views.MainView;
+import com.iup.tp.twitup.ihm.views.RegisterView;
+import com.iup.tp.twitup.ihm.views.TwitCreationView;
 
 import javax.swing.*;
 
