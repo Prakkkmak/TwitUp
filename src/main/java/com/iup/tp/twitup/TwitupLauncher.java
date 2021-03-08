@@ -1,6 +1,6 @@
 package com.iup.tp.twitup;
 
-import com.iup.tp.twitup.core.Twitup;
+import com.iup.tp.twitup.components.core.controller.Twitup;
 
 /**
  * Classe de lancement de l'application.
