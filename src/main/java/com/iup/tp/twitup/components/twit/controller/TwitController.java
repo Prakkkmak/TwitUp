@@ -8,7 +8,7 @@ import com.iup.tp.twitup.common.ICancelListener;
 import com.iup.tp.twitup.components.twit.events.ITwitListener;
 import com.iup.tp.twitup.common.Listened;
 
-public class TwitController extends Listened<ITwitListener> implements ITwitCreationViewListener {
+public class TwitController extends Listened<ITwitListener> implements ITwitCreationViewListener,  {
 
     IDatabase mDatabase;
 
