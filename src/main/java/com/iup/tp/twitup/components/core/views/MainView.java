@@ -18,6 +18,9 @@ public class MainView extends BaseView<IMainListener> {
         JButton twitButton = new JButton("Twitter");
         this.add(twitButton);
         twitButton.addActionListener(e -> doLoadTwitCreation());
+        JButton twitListButton = new JButton("Liste des twits");
+        this.add(twitListButton);
+        twitListButton.addActionListener(e -> doLoadTwitListView());
     }
 
     public void doLoadLoginView() {
@@ -30,5 +33,9 @@ public class MainView extends BaseView<IMainListener> {
 
     public void doLoadTwitCreation(){
         listeners.forEach(IMainListener::notifyLoadTwitCreation);
+    }
+
+    public void doLoadTwitListView(){
+        listeners.forEach(IMainListener::notifyLoadTwitList);
     }
 }

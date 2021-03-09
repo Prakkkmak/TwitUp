@@ -11,7 +11,8 @@ public class ConsoleApp implements IDatabaseObserver {
     @Override
     public void notifyTwitAdded(Twit addedTwit) {
         System.out.println("Un twit a été créé");
-        System.out.println(addedTwit.getTwiter());
+        System.out.println(addedTwit.getTwiter().getUuid());
+        System.out.println(addedTwit.getTwiter().getName());
         System.out.println(addedTwit.getText());
     }
 

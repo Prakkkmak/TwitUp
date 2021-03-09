@@ -7,4 +7,5 @@ public interface IMainListener {
     void notifyLoadLoginPage();
     void notifyLoadRegisterPage();
     void notifyLoadTwitCreation();
+    void notifyLoadTwitList();
 }

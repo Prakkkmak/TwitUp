@@ -3,23 +3,20 @@ package com.iup.tp.twitup.components.core.controller;
 import java.io.File;
 
 import com.formdev.flatlaf.FlatLightLaf;
+import com.iup.tp.twitup.base.datamodel.*;
 import com.iup.tp.twitup.components.console.ConsoleApp;
 import com.iup.tp.twitup.components.account.controller.AccountController;
 import com.iup.tp.twitup.components.account.events.IAccountListener;
 import com.iup.tp.twitup.components.twit.controller.TwitController;
 import com.iup.tp.twitup.components.twit.events.ITwitListener;
 import com.iup.tp.twitup.base.core.EntityManager;
-import com.iup.tp.twitup.base.datamodel.Database;
-import com.iup.tp.twitup.base.datamodel.IDatabase;
-import com.iup.tp.twitup.base.datamodel.Twit;
-import com.iup.tp.twitup.base.datamodel.User;
 import com.iup.tp.twitup.base.file.*;
 import com.iup.tp.twitup.components.core.views.TwitupFrame;
 import com.iup.tp.twitup.base.ihm.TwitupMock;
 import com.iup.tp.twitup.components.account.views.LoginView;
 import com.iup.tp.twitup.components.core.views.MainView;
 import com.iup.tp.twitup.components.account.views.RegisterView;
-import com.iup.tp.twitup.components.twit.views.TwitCreationView;
+import com.iup.tp.twitup.components.twit.models.TwitModel;
 
 import javax.swing.*;
 
@@ -28,7 +25,7 @@ import javax.swing.*;
  * 
  * @author S.Lucas
  */
-public class Twitup implements IAccountListener, IMainListener, ITwitListener {
+public class Twitup implements IAccountListener, IMainListener, ITwitListener, IDatabaseObserver {
 	public static User userConnected;
 	/**
 	 * Base de données.
@@ -69,7 +66,6 @@ public class Twitup implements IAccountListener, IMainListener, ITwitListener {
 	protected TwitController twitController;
 
 
-
 	/**
 	 * Constructeur.
 	 */
@@ -100,7 +96,8 @@ public class Twitup implements IAccountListener, IMainListener, ITwitListener {
 
 	protected void initControllers(){
 		this.accountController = new AccountController(mDatabase);
-		this.twitController = new TwitController(mDatabase);
+		TwitModel model = new TwitModel(mDatabase);
+		this.twitController = new TwitController(mEntityManager, model);
 		this.accountController.addListener(this);
 		this.twitController.addListener(this);
 	}
@@ -136,7 +133,7 @@ public class Twitup implements IAccountListener, IMainListener, ITwitListener {
 	 */
 	protected void initDirectory() {
 		//TODO I have a directory set ?
-		//mMainView.printSelectFolder();
+		mMainView.printSelectFolder();
 	}
 
 	/**
@@ -166,6 +163,7 @@ public class Twitup implements IAccountListener, IMainListener, ITwitListener {
 	protected void initDatabase() {
 		mDatabase = new Database();
 		mEntityManager = new EntityManager(mDatabase);
+		mDatabase.addObserver(this);
 	}
 
 	/**
@@ -211,19 +209,21 @@ public class Twitup implements IAccountListener, IMainListener, ITwitListener {
 
 	public void openTwitCreation(){
 		if(Twitup.userConnected == null) return;
-		TwitCreationView twitCreationView = new TwitCreationView();
-		twitCreationView.addListener(this.twitController);
-		mMainView.setView(twitCreationView);
+		mMainView.setView(this.twitController.openCreation());
+	}
+	public void openTwitList(){
+		//TODO call des twits dans le sous controller ?
+		mMainView.setView(this.twitController.openList());
 	}
 
 	@Override
 	public void notifyLogin(User user) {
-		this.userConnected = user;
+		userConnected = user;
 	}
 
 	@Override
 	public void notifyRegister(User user) {
-		this.userConnected = user;
+		userConnected = user;
 	}
 
 	@Override
@@ -245,6 +245,10 @@ public class Twitup implements IAccountListener, IMainListener, ITwitListener {
 	public void notifyLoadRegisterPage() {
 		openRegister();
 	}
+	@Override
+	public void notifyLoadTwitList() {
+		openTwitList();
+	}
 
 	@Override
 	public void notifyLoadTwitCreation() {
@@ -256,4 +260,33 @@ public class Twitup implements IAccountListener, IMainListener, ITwitListener {
 		openMain();
 	}
 
+	@Override
+	public void notifyTwitAdded(Twit addedTwit) {
+		this.twitController.twitAdded(addedTwit);
+	}
+
+	@Override
+	public void notifyTwitDeleted(Twit deletedTwit) {
+
+	}
+
+	@Override
+	public void notifyTwitModified(Twit modifiedTwit) {
+
+	}
+
+	@Override
+	public void notifyUserAdded(User addedUser) {
+
+	}
+
+	@Override
+	public void notifyUserDeleted(User deletedUser) {
+
+	}
+
+	@Override
+	public void notifyUserModified(User modifiedUser) {
+
+	}
 }
