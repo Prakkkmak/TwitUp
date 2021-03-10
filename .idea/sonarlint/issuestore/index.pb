@@ -42,3 +42,9 @@ l
 <src/main/java/com/iup/tp/twitup/base/file/IMainListener.java,e\e\ee5b4df4d096e9dd7ac1350126dbd8c88c798a06
 s
 Csrc/main/java/com/iup/tp/twitup/components/core/views/MainView.java,a\2\a2fa7923c3b4aa75d4724286240afb2d42f1cefb
+c
+3src/main/java/com/iup/tp/twitup/TwitupLauncher.java,b\f\bfa9abaf7cc896e73393acee7867d95e7b0d5ae3
+d
+4src/main/java/com/iup/tp/twitup/common/BaseView.java,9\8\983891db2e6a0b40e4b0fbebea740aa9f59fee80
+v
+Fsrc/main/java/com/iup/tp/twitup/components/core/views/TwitupFrame.java,b\c\bcd6941c4c835261d38c62767d5e6627f3ef7d6e

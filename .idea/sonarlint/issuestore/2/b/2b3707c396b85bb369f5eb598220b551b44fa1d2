@@ -3,18 +3,18 @@ v
 java:S1104"YMake userConnected a static final constant or non-public and provide accessors if needed.(êòé—8ÍÇØ/
 P
 java:S1135Ø"2Complete the task associated to this TODO comment.(™÷Ú8ÍÇØ/
+Y
+java:S2696Ş"6Make the enclosing method "static" or remove this set.(‹ŒÂùÿÿÿÿ8ÍÇØ/
+w
+java:S1128"URemove this unused import 'com.iup.tp.twitup.components.account.models.AccountModel'.(Ãõ÷Şüÿÿÿÿ8‚†°Û/
+Y
+java:S2696ã"6Make the enclosing method "static" or remove this set.(‹ŒÂùÿÿÿÿ8ÍÇØ/
+l
+java:S1128"ORemove this unused import 'com.iup.tp.twitup.components.twit.models.TwitModel'.(¤¤ñÛ8Ñ¬·Û/
+T
+java:S2696ü"6Make the enclosing method "static" or remove this set.(çÇşÈ8äÚ­Û/
 U
 java:S1135‰"2Complete the task associated to this TODO comment.(È¥çüÿÿÿÿ8ÍÇØ/
 P
 java:S1444"3Make this "public static userConnected" field final(êòé—8ÍÇØ/
 U	java:S106r"9Replace this use of System.out or System.err by a logger.(ı×¯Í8ÍÇØ/
-Y
-java:S2696ã"6Make the enclosing method "static" or remove this set.(‹ŒÂùÿÿÿÿ8ÍÇØ/
-Y
-java:S2696Ş"6Make the enclosing method "static" or remove this set.(‹ŒÂùÿÿÿÿ8ÍÇØ/
-l
-java:S1128"ORemove this unused import 'com.iup.tp.twitup.components.twit.models.TwitModel'.(¤¤ñÛ8Ñ¬·Û/
-T
-java:S2696ü"6Make the enclosing method "static" or remove this set.(çÇşÈ8äÚ­Û/
-w
-java:S1128"URemove this unused import 'com.iup.tp.twitup.components.account.models.AccountModel'.(Ãõ÷Şüÿÿÿÿ8‚†°Û/
