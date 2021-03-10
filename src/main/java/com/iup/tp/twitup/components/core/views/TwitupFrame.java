@@ -21,7 +21,7 @@ public class TwitupFrame extends JFrame {
     }
     public void printSelectFolder(){
         JFileChooser fileChooser = new FileChooser();
-        //panel.add(fileChooser);T
+        //panel.add(fileChooser);
         fileChooser.showOpenDialog(this);
         doInitDir(fileChooser.getSelectedFile());
 
