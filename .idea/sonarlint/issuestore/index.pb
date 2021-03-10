@@ -38,3 +38,7 @@ Rsrc/main/java/com/iup/tp/twitup/components/twit/controller/TwitListController.j
 Nsrc/main/java/com/iup/tp/twitup/components/twit/controller/TwitController.java,1\a\1a07d1ca2ecb17d4413487ad52e8bdbf27b111e9
 a
 1src/main/java/com/iup/tp/twitup/common/Model.java,7\4\741d4c24b721629a671598d1be15fe18975252ae
+l
+<src/main/java/com/iup/tp/twitup/base/file/IMainListener.java,e\e\ee5b4df4d096e9dd7ac1350126dbd8c88c798a06
+s
+Csrc/main/java/com/iup/tp/twitup/components/core/views/MainView.java,a\2\a2fa7923c3b4aa75d4724286240afb2d42f1cefb

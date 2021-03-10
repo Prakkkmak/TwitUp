@@ -1,22 +1,17 @@
 
+
+java:S1186R"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ıÚ­Û8÷ºêÚ/
+
+java:S1186M"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ìÚ‚’8÷ºêÚ/
+£
+java:S1186W"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(áÄ©Ñüÿÿÿÿ8÷ºêÚ/
+
+java:S1186a"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(é‚Œ8÷ºêÚ/
 k
 java:S1128	"PRemove this unused import 'com.iup.tp.twitup.components.core.controller.Twitup'.(«å±šşÿÿÿÿ
-
-java:S1186D"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ8÷ºêÚ/
-b
-java:S1128
-"GRemove this unused import 'com.iup.tp.twitup.base.datamodel.IDatabase'.(£Çñ™üÿÿÿÿ
-k
-java:S1128"PRemove this unused import 'com.iup.tp.twitup.components.core.views.TwitupFrame'.(ÊĞœƒøÿÿÿÿ
+£
+java:S1186\"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.( ßÿâÿÿÿÿÿ8÷ºêÚ/
 u
 java:S1128"_Remove this unused import 'com.iup.tp.twitup.components.twit.events.ITwitCreationViewListener'.(ÌÇå‹
-£
-java:S1186S"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(áÄ©Ñüÿÿÿÿ8÷ºêÚ/
-
-java:S1186]"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(é‚Œ8÷ºêÚ/
-£
-java:S1186X"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.( ßÿâÿÿÿÿÿ8÷ºêÚ/
-
-java:S1186I"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ìÚ‚’8÷ºêÚ/
-
-java:S1186N"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ıÚ­Û8÷ºêÚ/
+k
+java:S1128"PRemove this unused import 'com.iup.tp.twitup.components.core.views.TwitupFrame'.(ÊĞœƒøÿÿÿÿ
