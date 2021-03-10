@@ -1,7 +1,6 @@
 package com.iup.tp.twitup.components.twit.models;
 
 import com.iup.tp.twitup.base.datamodel.IDatabase;
-import com.iup.tp.twitup.base.datamodel.IDatabaseObserver;
 import com.iup.tp.twitup.base.datamodel.Twit;
 
 import java.util.List;

@@ -4,6 +4,7 @@ import java.io.File;
 
 import com.formdev.flatlaf.FlatLightLaf;
 import com.iup.tp.twitup.base.datamodel.*;
+import com.iup.tp.twitup.components.account.models.AccountModel;
 import com.iup.tp.twitup.components.console.ConsoleApp;
 import com.iup.tp.twitup.components.account.controller.AccountController;
 import com.iup.tp.twitup.components.account.events.IAccountListener;
@@ -95,7 +96,8 @@ public class Twitup implements IAccountListener, IMainListener, ITwitListener, I
 	}
 
 	protected void initControllers(){
-		this.accountController = new AccountController(mDatabase);
+		AccountModel accountModel = new AccountModel((mDatabase));
+		this.accountController = new AccountController(mEntityManager, accountModel);
 		TwitModel model = new TwitModel(mDatabase);
 		this.twitController = new TwitController(mEntityManager, model);
 		this.accountController.addListener(this);

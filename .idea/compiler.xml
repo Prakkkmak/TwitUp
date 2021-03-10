@@ -9,8 +9,8 @@
         <module name="TwitUp" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8">
-      <module name="TwitUp" target="8" />
+    <bytecodeTargetLevel target="11">
+      <module name="TwitUp" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

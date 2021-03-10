@@ -1,9 +1,11 @@
 <component name="libraryTable">
   <library name="com.formdev:flatlaf:1.0" type="repository">
-    <properties maven-id="com.formdev:flatlaf:1.0" />
-    <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/com/formdev/flatlaf/1.0/flatlaf-1.0.jar!/" />
-    </CLASSES>
+    <properties maven-id="com.formdev:flatlaf:1.0">
+      <exclude>
+        <dependency maven-id="com.formdev:flatlaf" />
+      </exclude>
+    </properties>
+    <CLASSES />
     <JAVADOC />
     <SOURCES />
   </library>
