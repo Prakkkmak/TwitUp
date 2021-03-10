@@ -8,7 +8,9 @@ import com.iup.tp.twitup.components.twit.events.ITwitCreationListener;
 import com.iup.tp.twitup.components.twit.events.ITwitCreationViewListener;
 
 public class TwitCreationController extends Listened<ITwitCreationListener> implements ITwitCreationViewListener {
+
     protected EntityManager manager;
+
     public TwitCreationController(EntityManager entityManager){
         this.manager = entityManager;
     }

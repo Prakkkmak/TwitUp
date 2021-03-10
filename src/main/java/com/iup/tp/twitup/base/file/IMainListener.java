@@ -6,6 +6,7 @@ public interface IMainListener {
     void notifyInitDir(File dir);
     void notifyLoadLoginPage();
     void notifyLoadRegisterPage();
+    void notifyDisconnect();
     void notifyLoadTwitCreation();
     void notifyLoadTwitList();
 }

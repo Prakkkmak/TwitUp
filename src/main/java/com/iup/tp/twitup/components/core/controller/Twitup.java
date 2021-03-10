@@ -26,7 +26,7 @@ import javax.swing.*;
  * 
  * @author S.Lucas
  */
-public class Twitup implements IAccountListener, IMainListener, ITwitListener, IDatabaseObserver {
+public class Twitup implements IAccountListener, IMainListener, ITwitListener {
 	public static User userConnected;
 	/**
 	 * Base de données.
@@ -96,10 +96,10 @@ public class Twitup implements IAccountListener, IMainListener, ITwitListener, I
 	}
 
 	protected void initControllers(){
-		AccountModel accountModel = new AccountModel((mDatabase));
-		this.accountController = new AccountController(mEntityManager, accountModel);
-		TwitModel model = new TwitModel(mDatabase);
-		this.twitController = new TwitController(mEntityManager, model);
+		this.accountController = new AccountController(mEntityManager, mDatabase);
+		mDatabase.addObserver(accountController);
+		this.twitController = new TwitController(mEntityManager, mDatabase);
+		mDatabase.addObserver(twitController);
 		this.accountController.addListener(this);
 		this.twitController.addListener(this);
 	}
@@ -165,7 +165,6 @@ public class Twitup implements IAccountListener, IMainListener, ITwitListener, I
 	protected void initDatabase() {
 		mDatabase = new Database();
 		mEntityManager = new EntityManager(mDatabase);
-		mDatabase.addObserver(this);
 	}
 
 	/**
@@ -247,6 +246,12 @@ public class Twitup implements IAccountListener, IMainListener, ITwitListener, I
 	public void notifyLoadRegisterPage() {
 		openRegister();
 	}
+
+	@Override
+	public void notifyDisconnect() {
+		userConnected = null;
+	}
+
 	@Override
 	public void notifyLoadTwitList() {
 		openTwitList();
@@ -260,35 +265,5 @@ public class Twitup implements IAccountListener, IMainListener, ITwitListener, I
 	@Override
 	public void notifyTwitCreated(Twit twit){
 		openMain();
-	}
-
-	@Override
-	public void notifyTwitAdded(Twit addedTwit) {
-		this.twitController.twitAdded(addedTwit);
-	}
-
-	@Override
-	public void notifyTwitDeleted(Twit deletedTwit) {
-
-	}
-
-	@Override
-	public void notifyTwitModified(Twit modifiedTwit) {
-
-	}
-
-	@Override
-	public void notifyUserAdded(User addedUser) {
-
-	}
-
-	@Override
-	public void notifyUserDeleted(User deletedUser) {
-
-	}
-
-	@Override
-	public void notifyUserModified(User modifiedUser) {
-
 	}
 }

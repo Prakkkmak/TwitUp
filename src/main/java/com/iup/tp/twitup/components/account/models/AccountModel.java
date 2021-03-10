@@ -1,21 +1,18 @@
 package com.iup.tp.twitup.components.account.models;
 
 import com.iup.tp.twitup.base.datamodel.IDatabase;
-import com.iup.tp.twitup.base.datamodel.Twit;
 import com.iup.tp.twitup.base.datamodel.User;
+import com.iup.tp.twitup.common.Model;
 
 import java.util.List;
-import java.util.Observable;
 import java.util.Set;
 
-public class AccountModel extends Observable {
+public class AccountModel extends Model {
 
     protected Set<User> users;
-    protected IDatabase database;
 
     public AccountModel(IDatabase database){
-        super();
-        this.database = database;
+        super(database);
         this.users = database.getUsers();
     }
 
@@ -30,6 +27,7 @@ public class AccountModel extends Observable {
         setChanged();
         notifyObservers();
     }
+
 
     public Set<User> getAccounts(){
         return this.users;

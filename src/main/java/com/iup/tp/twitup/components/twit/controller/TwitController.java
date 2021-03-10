@@ -1,6 +1,8 @@
 package com.iup.tp.twitup.components.twit.controller;
 
 import com.iup.tp.twitup.base.core.EntityManager;
+import com.iup.tp.twitup.base.datamodel.IDatabaseObserver;
+import com.iup.tp.twitup.base.datamodel.User;
 import com.iup.tp.twitup.components.core.views.TwitupFrame;
 import com.iup.tp.twitup.components.twit.events.ITwitCreationListener;
 import com.iup.tp.twitup.components.twit.events.ITwitCreationViewListener;
@@ -15,21 +17,25 @@ import com.iup.tp.twitup.components.twit.models.TwitModel;
 import com.iup.tp.twitup.components.twit.views.TwitCreationView;
 import com.iup.tp.twitup.components.twit.views.TwitListView;
 
-public class TwitController extends Listened<ITwitListener> implements ITwitCreationListener, ITwitListListener {
+public class TwitController extends Listened<ITwitListener> implements ITwitCreationListener, ITwitListListener, IDatabaseObserver {
 
-    EntityManager manager;
-    TwitModel model;
+    protected EntityManager manager;
+    protected TwitModel model;
 
     protected TwitCreationController twitCreationController;
     protected TwitListController twitListController;
 
-    public TwitController(EntityManager manager, TwitModel model){
+    public TwitController(EntityManager manager, IDatabase database){
         this.twitCreationController = new TwitCreationController(manager);
         this.twitCreationController.addListener(this);
         this.twitListController = new TwitListController();
         this.twitListController.addListener(this);
         this.manager = manager;
-        this.model = model;
+        this.model = new TwitModel(database);
+    }
+
+    public TwitModel getModel(){
+        return this.model;
     }
 
     public TwitCreationView openCreation(){
@@ -43,10 +49,6 @@ public class TwitController extends Listened<ITwitListener> implements ITwitCrea
         view.addListener(this.twitListController);
         model.addObserver(view);
         return view;
-    }
-
-    public void twitAdded(Twit twit){
-        this.model.addTwit(twit);
     }
 
     @Override
@@ -66,8 +68,33 @@ public class TwitController extends Listened<ITwitListener> implements ITwitCrea
         listeners.forEach(ICancelListener::notifyCancel);
     }
 
+    @Override
+    public void notifyTwitAdded(Twit addedTwit) {
+        this.model.addTwit(addedTwit);
+    }
 
+    @Override
+    public void notifyTwitDeleted(Twit deletedTwit) {
 
+    }
 
+    @Override
+    public void notifyTwitModified(Twit modifiedTwit) {
 
+    }
+
+    @Override
+    public void notifyUserAdded(User addedUser) {
+
+    }
+
+    @Override
+    public void notifyUserDeleted(User deletedUser) {
+
+    }
+
+    @Override
+    public void notifyUserModified(User modifiedUser) {
+
+    }
 }

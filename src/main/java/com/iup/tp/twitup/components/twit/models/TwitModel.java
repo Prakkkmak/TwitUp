@@ -2,19 +2,18 @@ package com.iup.tp.twitup.components.twit.models;
 
 import com.iup.tp.twitup.base.datamodel.IDatabase;
 import com.iup.tp.twitup.base.datamodel.Twit;
+import com.iup.tp.twitup.common.Model;
+import com.iup.tp.twitup.common.Observable;
 
 import java.util.List;
-import java.util.Observable;
 import java.util.Set;
 
-public class TwitModel extends Observable {
+public class TwitModel extends Model {
 
     protected Set<Twit> twits;
-    protected IDatabase database;
 
     public TwitModel(IDatabase database){
-        super();
-        this.database = database;
+        super(database);
         this.twits = database.getTwits();
     }
 

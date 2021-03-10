@@ -1,17 +1,15 @@
 package com.iup.tp.twitup.components.twit.views;
 
-import com.iup.tp.twitup.base.datamodel.Twit;
 import com.iup.tp.twitup.common.ICancelListener;
-import com.iup.tp.twitup.components.twit.events.ITwitListListener;
+import com.iup.tp.twitup.common.Observable;
+import com.iup.tp.twitup.common.Observer;
 import com.iup.tp.twitup.components.twit.events.ITwitListViewListener;
-import com.iup.tp.twitup.components.twit.events.ITwitListener;
 import com.iup.tp.twitup.common.BaseView;
 import com.iup.tp.twitup.components.twit.models.TwitModel;
 import com.iup.tp.twitup.components.twit.views.comp.TwitComponent;
 
 import javax.swing.*;
-import java.awt.*;
-import java.util.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class TwitListView extends BaseView<ITwitListViewListener> implements Observer {
@@ -62,6 +60,5 @@ public class TwitListView extends BaseView<ITwitListViewListener> implements Obs
     protected void doCancel(){
         listeners.forEach(ICancelListener::notifyCancel);
     }
-
 
 }

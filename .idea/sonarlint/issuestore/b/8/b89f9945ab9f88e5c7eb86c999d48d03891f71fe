@@ -1,0 +1,19 @@
+
+U
+java:S1155Ö">Use isEmpty() to check whether the collection is empty or not.(Š–­¦
+C
+java:S1604>"(Make this anonymous inner class a lambda(Ô¶µÿşÿÿÿÿ
+=
+java:S1604^"(Make this anonymous inner class a lambda(È¿ÔS
+C
+java:S1604h"(Make this anonymous inner class a lambda(¿¿ÿ–ıÿÿÿÿ
+C
+java:S1604w"(Make this anonymous inner class a lambda(„¬íÚÿÿÿÿÿ
+D
+java:S1604"(Make this anonymous inner class a lambda(ÇÉó›üÿÿÿÿ
+v
+java:S1488¶"_Immediately return this expression instead of assigning it to the temporary variable "newUser".(‚Â®Ï
+{
+java:S1488à"_Immediately return this expression instead of assigning it to the temporary variable "newTwit".(ˆ¾¤ùÿÿÿÿ
+p
+java:S2293¶"YReplace the type specification in this constructor call with the diamond operator ("<>").(‚Â®Ï

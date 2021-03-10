@@ -15,6 +15,9 @@ public class MainView extends BaseView<IMainListener> {
         JButton loginButton = new JButton("Se connecter");
         this.add(loginButton);
         loginButton.addActionListener(e -> doLoadLoginView());
+        JButton disconnectButton = new JButton("Se déconnecter");
+        this.add(disconnectButton);
+        disconnectButton.addActionListener(e -> doDisconnect());
         JButton twitButton = new JButton("Twitter");
         this.add(twitButton);
         twitButton.addActionListener(e -> doLoadTwitCreation());
@@ -30,6 +33,8 @@ public class MainView extends BaseView<IMainListener> {
     public void doLoadRegisterView() {
         listeners.forEach(IMainListener::notifyLoadRegisterPage);
     }
+
+    public void doDisconnect(){listeners.forEach(IMainListener::notifyDisconnect);}
 
     public void doLoadTwitCreation(){
         listeners.forEach(IMainListener::notifyLoadTwitCreation);
